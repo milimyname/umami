@@ -27,6 +27,7 @@ RUN yarn build-docker
 
 # Production image, copy all the files and run next
 FROM node:18-alpine AS runner
+RUN apk --update add postgresql-client
 WORKDIR /app
 
 ENV NODE_ENV production
